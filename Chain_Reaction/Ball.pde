@@ -25,4 +25,11 @@ class Ball {
     y = y + dy;
     bounce();
   }
+  
+  void bounce() {
+    if (x >= 600 || x <= 0 || y >= 600 || x <= 0) {
+      dx = 0 - dx;
+      dy = 0 - dy;
+    }
+  }
 }
