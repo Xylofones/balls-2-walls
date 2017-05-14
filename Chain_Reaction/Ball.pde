@@ -14,6 +14,7 @@ class Ball {
     x = random((width - r) + r/2);
     y = random((height - r) + r/2);
     rad = 10;
+    ellipse(x,y,10,10);
     c = color (r, g, b);
     dx = random(10) - 5;
     dy = random(10) - 5;
