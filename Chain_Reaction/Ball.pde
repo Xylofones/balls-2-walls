@@ -23,24 +23,26 @@ class Ball {
   }
 
   void move() {
-    if (rad >=50) {
-      state = 3;
+    if (state == 0) {
     }
-    if (state == 1){ 
+    else if (state == 1){ 
       x = x + dx;
       y = y + dy;
       bounce();
     }
     else if (state == 2) {
-      if (rad < 100) {
-        rad += .1;
+      if (rad < 80) {
+        rad += 1;
       }
-      if (rad >=50) {
+      if (rad >=80) {
         state = 3;
       }
     }   
     if (state == 3){
-      rad = rad -.2;
+      rad = rad -1;
+      if (rad <= 0) {
+        state = 0;
+      }
     }
     else{
     }
@@ -56,6 +58,7 @@ class Ball {
   }
   
   void display() {
+    fill(c);
     ellipse(x,y,rad*2,rad*2);
   }
   
