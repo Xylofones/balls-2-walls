@@ -24,8 +24,12 @@ void draw() {
     for (int x = 0; x < balls.length;x++) {
         if ( balls[i] != balls[x]) {
           if (balls[i].collisonCheck(balls[x])) {
+          if (balls[i].state==1) { 
             balls[i].state = 2;
-            balls[x].state = 2;    
+          }
+          if (balls[x].state==1) {
+            balls[x].state = 2;  
+          }
         }
       }
     }
